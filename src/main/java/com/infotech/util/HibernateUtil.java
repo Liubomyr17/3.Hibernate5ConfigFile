@@ -1,4 +1,4 @@
-package com.izdebski.util;
+package com.infotech.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -14,7 +14,7 @@ public class HibernateUtil {
     static {
         try{
         if (sessionFactory == null) {
-            standardServiceRegistry = new StandardServiceRegistryBuilder().configure().build();
+            standardServiceRegistry = new StandardServiceRegistryBuilder().configure("myconfig.cfg.xml").build();
             MetadataSources metadataSources = new MetadataSources(standardServiceRegistry);
             Metadata metadata = metadataSources.getMetadataBuilder().build();
             sessionFactory = metadata.getSessionFactoryBuilder().build();
